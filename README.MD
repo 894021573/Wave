@@ -357,15 +357,6 @@ class UserValidator extends Validator
         * 通过必填项验证规则
         * 没有写必填项验证规则，但是该项的值满足必填项验证规则（非null且非空）
 
-# 十一、缓存
+# 十一、缓存（文档还没写）
 * 静态页面缓存
-    * 配置 config/main.php
-    ```
-        'view_cache' =>
-            [
-                'is_open_cache' => true, // 如果为false，不生成静态缓存文件,开发期间应设置为false
-                'view_cache_dir' => PROJECT_DIR . 'runtime/view_cache/', // 静态文件缓存路径
-                'expire_time' => 60, // 缓存时间,单位秒
-            ],    
-    ```
 * 数据缓存
