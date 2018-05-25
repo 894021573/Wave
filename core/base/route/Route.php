@@ -31,8 +31,8 @@ class Route
     public function __construct()
     {
         $this->_requestUri = '';
-        if (!empty($_SERVER['PATH_INFO'])) {
-            $this->_requestUri = trim($_SERVER['PATH_INFO'], '/');
+        if (!empty($_SERVER['REQUEST_URI'])) {
+            $this->_requestUri = trim($_SERVER['REQUEST_URI'], '/');
         }
 
         $this->_requestMethod = $_SERVER['REQUEST_METHOD'];

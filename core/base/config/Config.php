@@ -90,8 +90,7 @@ class Config
         {
             if(!isset($currentConfig[$k]))
             {
-                var_dump($k);
-                var_dump($currentConfig);
+                throw new \Exception("配置项{$k}不存在");
             }
             $currentConfig = $currentConfig[$k];
         }
