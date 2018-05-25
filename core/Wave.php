@@ -208,28 +208,6 @@ class Wave
         self::processException();
     }
 
-    /**
-     * 队列和定时任务（实验）
-     *
-     * @param $argv
-     */
-    public static function runCommandQueue($argv)
-    {
-        if (!isset($argv[1]) || !in_array($argv[1], ['-queue', '-cron_job'])) {
-            echo 'please input command as : -queue or -cron_job after index.php';
-        }
-
-        if ($argv[1] == '-queue') // 队列
-        {
-            require 'queue.php';
-        }
-
-        if ($argv[1] == '-cron_job') // 定时任务
-        {
-            require 'cron_job.php';
-        }
-    }
-
     public function __destruct()
     {
         /**
