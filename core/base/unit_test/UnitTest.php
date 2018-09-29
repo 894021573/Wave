@@ -162,4 +162,14 @@ EOF;
 
         return ['message' => $message, 'fail' => $failMessage];
     }
+	
+	// 调用私有方法
+	public function invokePrivateMethod($className, $methodName, $args = [])
+    {
+        $refClass = new \ReflectionClass($className);
+        $instance = $refClass->newInstance();
+        $method = $refClass->getmethod($methodName);
+        $method->setAccessible(true);
+        return $method->invokeArgs($instance,$args);
+    }
 }
